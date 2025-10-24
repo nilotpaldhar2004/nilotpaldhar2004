@@ -1,9 +1,7 @@
 <h1 align="center">Hi 👋, I'm Nilotpal Dhar</h1>
 <h3 align="center">Aspiring Data Scientist | CS Student | AI/ML Enthusiast 🚀</h3>
 
-3rd-year B.Tech Computer Science student | AI/ML & Data Visualization | Python, SQL, Pandas, NumPy
-
-Matplotlib, Scikit-learn | DSA in C++ for critical thinking | Building ML models & data-driven solutions
+3rd-year B.Tech Computer Science student | AI/ML & Data Visualization | Python, SQL, Pandas, NumPy, Matplotlib, Scikit-learn | DSA in C++ for critical thinking | Building ML models & data-driven solutions
 
 - 📫 How to reach me **dharnilotpal31@gmail.com**
 

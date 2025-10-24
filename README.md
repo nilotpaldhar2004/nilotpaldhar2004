@@ -1,9 +1,7 @@
 <h1 align="center">Hi 👋, I'm Nilotpal Dhar</h1>
 <h3 align="center">Aspiring Data Scientist | CSBS Student | AI & Data Analytics Enthusiast 🚀</h3>
 
-- 🌱 I’m currently learning **Data Science, Machine Learning, Deep Learning, AI, Power BI, Tableau, and Advanced Data Analytics.**
-
-- 💬 Ask me about **Data Analytics, Data Science, Python, SQL, Machine Learning, C++, and Business Systems.**
+3rd-year CSBS student | AI/ML & Data Visualization | Python, SQL, Pandas, NumPy, Matplotlib, Scikit-learn | DSA in C++ for critical thinking | Building ML models & data-driven solutions
 
 - 📫 How to reach me **dharnilotpal31@gmail.com**
 

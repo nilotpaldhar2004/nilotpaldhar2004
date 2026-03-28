@@ -1,5 +1,5 @@
 # 💫 About Me:
-Aspiring Data Scientist | CS Student | AI/ML Enthusiast 🚀<br>3rd-year B.Tech Computer Science student | AI/ML & Data Visualization | Python, SQL, Pandas, NumPy, Matplotlib, Scikit-learn | DSA in Python | Building ML models & data-driven solutions
+Data Science | CS Student | AI/ML Enthusiast 🚀<br>3rd-year B.Tech Computer Science student | AI/ML & Data Visualization | Python, SQL, Pandas, NumPy, Matplotlib, Scikit-learn | DSA in Python | Building ML models & data-driven solutions
 
 
 ## 🌐 Socials:

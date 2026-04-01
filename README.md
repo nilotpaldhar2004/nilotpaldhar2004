@@ -161,18 +161,18 @@ report = dd.diagnose()
 <div align="center">
 
 <!--
-  IMPORTANT — Stats cards use the PUBLIC Vercel instance of github-readme-stats.
-  That instance is rate-limited and goes down during peak hours.
-  The cards below use the most reliable fallback URLs available.
-  If they still show an error, see the "Fix" note at the bottom of this section.
+  These images are generated daily by a GitHub Actions workflow (.github/workflows/stats.yml)
+  and saved as static SVG files in this repo under /assets/.
+  They NEVER depend on any external server so they NEVER go down.
+  See the workflow file for setup instructions.
 -->
 
-<img src="https://github-readme-stats.vercel.app/api?username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&count_private=false&rank_icon=github&custom_title=Nilotpal%27s+GitHub+Stats" width="49%" />
-<img src="https://streak-stats.demolab.com/?user=nilotpaldhar2004&theme=tokyonight&hide_border=true" width="49%" />
+<img src="./assets/stats.svg" width="49%" alt="GitHub Stats" />
+<img src="./assets/streak.svg" width="49%" alt="GitHub Streak" />
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nilotpaldhar2004&theme=tokyonight&hide_border=true&count_private=false&layout=compact&langs_count=8&custom_title=Most+Used+Languages" width="42%" />
+<img src="./assets/langs.svg" width="42%" alt="Top Languages" />
 
 </div>
 
@@ -189,7 +189,7 @@ report = dd.diagnose()
 ## 🏆 GitHub Trophies
 
 <div align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=nilotpaldhar2004&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=6" width="100%" />
+<img src="./assets/trophies.svg" width="100%" alt="GitHub Trophies" />
 </div>
 
 ---

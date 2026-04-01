@@ -160,12 +160,13 @@ report = dd.diagnose()
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&custom_title=Nilotpal's+GitHub+Stats" width="49%" />
-<img src="https://nirzak-streak-stats.vercel.app/?user=nilotpaldhar2004&theme=tokyonight&hide_border=true" width="49%" />
+<img src="https://github-readme-stats.vercel.app/api?username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&custom_title=Nilotpal+GitHub+Stats&cache_seconds=1800" width="49%" />
+
+<img src="https://streak-stats.demolab.com?user=nilotpaldhar2004&theme=tokyonight&hide_border=true&cache_seconds=1800" width="49%" />
 
 <br/>
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nilotpaldhar2004&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&layout=compact&langs_count=8&custom_title=Most+Used+Languages" width="42%" />
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nilotpaldhar2004&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&layout=compact&langs_count=8&custom_title=Most+Used+Languages&cache_seconds=1800" width="49%" />
 
 </div>
 

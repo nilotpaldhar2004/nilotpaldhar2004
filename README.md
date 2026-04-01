@@ -158,14 +158,17 @@ report = dd.diagnose()
 
 ## 📊 GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&v=1" width="48%" />
-  <img src="https://streak-stats.demolab.com?user=nilotpaldhar2004&theme=tokyonight&hide_border=true&v=1" width="48%" />
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nilotpaldhar2004&layout=compact&theme=tokyonight&hide_border=true&v=1" width="40%" />
-</p>
+<img src="https://github-readme-stats.vercel.app/api?username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&custom_title=Nilotpal's+GitHub+Stats" width="49%" />
+
+<img src="https://nirzak-streak-stats.vercel.app/?user=nilotpaldhar2004&theme=tokyonight&hide_border=true" width="49%" />
+
+<br/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nilotpaldhar2004&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&layout=compact&langs_count=8&custom_title=Most+Used+Languages" width="42%" />
+
+</div>
 
 ---
 

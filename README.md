@@ -11,7 +11,7 @@
 <br/><br/>
 
 <!-- Badges Row -->
-<img src="https://komarev.com/ghpvc/?username=nilotpaldhar2004&label=Profile+Views&color=2563eb&style=for-the-badge" alt="Profile Views" />
+<img src="https://komarev.com/ghpvc/?username=nilotpaldhar2004&label=Profile+Views&color=2563eb&style=for-the-badge&base=500" alt="Profile Views" />
 &nbsp;
 <a href="https://github.com/nilotpaldhar2004?tab=followers">
   <img src="https://img.shields.io/github/followers/nilotpaldhar2004?label=Followers&style=for-the-badge&color=2563eb&labelColor=0f2240" alt="GitHub Followers" />

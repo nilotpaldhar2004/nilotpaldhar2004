@@ -17,7 +17,7 @@ jobs:
 
       # ── Step 1: Check out the repo ─────────────────────────────
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # ── Step 2: Create assets folder if it doesn't exist ───────
       - name: Create assets folder
@@ -51,11 +51,23 @@ jobs:
           echo "Streak SVG saved."
 
       # ── Step 6: Generate Trophies via curl ─────────────────────
+      # Adds a browser User-Agent header so the trophy service
+      # doesn't reject the request as a bot, and retries up to 3 times.
       - name: Generate Trophies
         run: |
-          curl -s "https://github-profile-trophy.vercel.app/?username=nilotpaldhar2004&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=6" \
+          curl -s --retry 3 --retry-delay 5 \
+            -H "User-Agent: Mozilla/5.0 (compatible; GitHubActions)" \
+            "https://github-profile-trophy.vercel.app/?username=nilotpaldhar2004&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=6" \
             -o assets/trophies.svg
-          echo "Trophies SVG saved."
+
+          # Check if the file is a valid SVG (not an error HTML page)
+          if grep -q "<svg" assets/trophies.svg; then
+            echo "✅ Trophies SVG saved successfully."
+          else
+            echo "⚠️ Trophy service returned an error — keeping previous version if it exists."
+            # Don't overwrite with a broken file; delete the bad response
+            rm assets/trophies.svg
+          fi
 
       # ── Step 7: Commit all generated SVGs back to the repo ─────
       - name: Commit SVGs

@@ -159,12 +159,12 @@ report = dd.diagnose()
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true&rank_icon=github&custom_title=Nilotpal+GitHub+Stats&v=1" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&v=1" width="48%" />
   <img src="https://streak-stats.demolab.com?user=nilotpaldhar2004&theme=tokyonight&hide_border=true&v=1" width="48%" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nilotpaldhar2004&theme=tokyonight&hide_border=true&layout=compact&langs_count=8&custom_title=Most+Used+Languages&v=1" width="40%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nilotpaldhar2004&layout=compact&theme=tokyonight&hide_border=true&v=1" width="40%" />
 </p>
 
 ---

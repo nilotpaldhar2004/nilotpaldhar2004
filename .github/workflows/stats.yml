@@ -1,95 +1,85 @@
 name: Generate GitHub Stats SVGs
 
-# Runs every day at 6:00 AM UTC, and on every push to main
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 3 * * *"   # Runs every day at 3:00 AM UTC
   push:
     branches: [main]
-  workflow_dispatch: # Lets you trigger it manually from the Actions tab
+  workflow_dispatch:       # Lets you run it manually from the Actions tab
 
 jobs:
-  generate-stats:
+  build:
     runs-on: ubuntu-latest
-    # Required so the workflow can write files back to the repo
     permissions:
-      contents: write
+      contents: write      # Required to commit the SVG files back to the repo
 
     steps:
-      # ── 1. Check out the profile repo ─────────────────────────
-      - name: Checkout repository
+
+      # ── Step 1: Check out the repo ─────────────────────────────
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # ── 2. Create the assets folder if it doesn't exist ───────
-      - name: Create assets directory
+      # ── Step 2: Create assets folder if it doesn't exist ───────
+      - name: Create assets folder
         run: mkdir -p assets
 
-      # ── 3. Generate GitHub Stats card ─────────────────────────
+      # ── Step 3: Generate GitHub Stats card ─────────────────────
+      # Uses readme-tools/github-readme-stats-action@v1
+      # This is the OFFICIAL recommended GitHub Action from the
+      # github-readme-stats documentation (not a third-party fork)
       - name: Generate Stats Card
-        uses: anuraghazra/github-readme-stats@latest
+        uses: readme-tools/github-readme-stats-action@v1
         with:
-          username: nilotpaldhar2004
-          # Saves the SVG to assets/stats.svg
-          output_path: assets/stats.svg
-          # Card settings — match your README theme
-          theme: tokyonight
-          hide_border: true
-          show_icons: true
-          rank_icon: github
-          count_private: false
-          custom_title: "Nilotpal's GitHub Stats"
-        env:
-          # GITHUB_TOKEN is automatically provided — no setup needed
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          card: stats
+          options: >-
+            username=nilotpaldhar2004
+            &show_icons=true
+            &theme=tokyonight
+            &hide_border=true
+            &rank_icon=github
+            &count_private=false
+            &custom_title=Nilotpal's GitHub Stats
+          path: assets/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ── 4. Generate Top Languages card ────────────────────────
+      # ── Step 4: Generate Top Languages card ────────────────────
       - name: Generate Top Languages Card
-        uses: anuraghazra/github-readme-stats@latest
+        uses: readme-tools/github-readme-stats-action@v1
         with:
-          username: nilotpaldhar2004
-          output_path: assets/langs.svg
-          card_type: top_langs
-          theme: tokyonight
-          hide_border: true
-          layout: compact
-          langs_count: 8
-          count_private: false
-          custom_title: "Most Used Languages"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          card: top-langs
+          options: >-
+            username=nilotpaldhar2004
+            &theme=tokyonight
+            &hide_border=true
+            &layout=compact
+            &langs_count=8
+            &count_private=false
+            &custom_title=Most Used Languages
+          path: assets/langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ── 5. Generate Streak Stats ───────────────────────────────
+      # ── Step 5: Generate Streak Stats via curl ─────────────────
+      # streak-stats.demolab.com is a public SVG endpoint —
+      # downloading it once per day as a static file is reliable.
       - name: Generate Streak Stats
-        # Uses the official DenverCoder1 streak-stats action
-        uses: DenverCoder1/github-readme-streak-stats@v2
-        with:
-          username: nilotpaldhar2004
-          output_path: assets/streak.svg
-          theme: tokyonight
-          hide_border: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # ── 6. Generate Trophies ───────────────────────────────────
-      - name: Generate Trophies
-        uses: ryo-ma/github-profile-trophy@v1
-        with:
-          username: nilotpaldhar2004
-          output_path: assets/trophies.svg
-          theme: tokyonight
-          no-frame: true
-          no-bg: true
-          margin-w: 6
-          column: 6
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # ── 7. Commit the generated SVGs back to the repo ─────────
-      - name: Commit updated SVGs
         run: |
-          git config --global user.name  "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          curl -s "https://streak-stats.demolab.com/?user=nilotpaldhar2004&theme=tokyonight&hide_border=true" \
+            -o assets/streak.svg
+          echo "Streak SVG saved."
+
+      # ── Step 6: Generate Trophies via curl ─────────────────────
+      - name: Generate Trophies
+        run: |
+          curl -s "https://github-profile-trophy.vercel.app/?username=nilotpaldhar2004&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=6" \
+            -o assets/trophies.svg
+          echo "Trophies SVG saved."
+
+      # ── Step 7: Commit all generated SVGs back to the repo ─────
+      - name: Commit SVGs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/
-          # Only commit if there are actual changes (avoids empty commits)
-          git diff --staged --quiet || git commit -m "chore: update github stats SVGs [skip ci]"
+          # Only commits if something actually changed — no empty commits
+          git diff --staged --quiet || git commit -m "chore: update stats SVGs [skip ci]"
           git push

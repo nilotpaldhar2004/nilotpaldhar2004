@@ -189,7 +189,11 @@ report = dd.diagnose()
 ## 🏆 GitHub Trophies
 
 <div align="center">
-<img src="./assets/trophies.svg" width="100%" alt="GitHub Trophies" />
+
+<!-- Trophies: tries local cached SVG first, falls back to direct URL if not generated -->
+<img src="./assets/trophies.svg" width="100%" alt="GitHub Trophies"
+  onerror="this.onerror=null;this.src='https://github-profile-trophy.vercel.app/?username=nilotpaldhar2004&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=6'" />
+
 </div>
 
 ---

@@ -24,11 +24,13 @@ jobs:
         run: mkdir -p assets
 
       # ── Step 3: Generate GitHub Stats card ─────────────────────
+      # include_all_commits=true counts ALL commits across all years
+      # show_total_stars=true counts stars others give YOUR repos
       - name: Generate Stats Card
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
-          options: "username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&count_private=false"
+          options: "username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&show=reviews,discussions_started,prs_merged"
           path: assets/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -37,36 +39,54 @@ jobs:
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
-          options: "username=nilotpaldhar2004&theme=tokyonight&hide_border=true&layout=compact&langs_count=8&count_private=false"
+          options: "username=nilotpaldhar2004&theme=tokyonight&hide_border=true&layout=compact&langs_count=8"
           path: assets/langs.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # ── Step 5: Generate Streak Stats via curl ─────────────────
-      # streak-stats.demolab.com is a public SVG endpoint —
-      # downloading it once per day as a static file is reliable.
       - name: Generate Streak Stats
         run: |
-          curl -s "https://streak-stats.demolab.com/?user=nilotpaldhar2004&theme=tokyonight&hide_border=true" \
+          curl -s \
+            -H "User-Agent: Mozilla/5.0 (compatible; GitHubActions)" \
+            "https://streak-stats.demolab.com/?user=nilotpaldhar2004&theme=tokyonight&hide_border=true" \
             -o assets/streak.svg
-          echo "Streak SVG saved."
 
-      # ── Step 6: Generate Trophies via curl ─────────────────────
-      # Adds a browser User-Agent header so the trophy service
-      # doesn't reject the request as a bot, and retries up to 3 times.
+          if grep -q "<svg" assets/streak.svg; then
+            echo "✅ Streak SVG saved."
+          else
+            echo "⚠️ Streak service error — removing bad file."
+            rm -f assets/streak.svg
+          fi
+
+      # ── Step 6: Generate Trophies ───────────────────────────────
+      # Uses github-trophies.vercel.app — a maintained fork that is
+      # more reliable than github-profile-trophy.vercel.app.
+      # Tries 3 different working URLs in order — uses first that works.
       - name: Generate Trophies
         run: |
-          curl -s --retry 3 --retry-delay 5 \
-            -H "User-Agent: Mozilla/5.0 (compatible; GitHubActions)" \
-            "https://github-profile-trophy.vercel.app/?username=nilotpaldhar2004&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=6" \
-            -o assets/trophies.svg
+          TROPHY_URLS=(
+            "https://github-trophies.vercel.app/?username=nilotpaldhar2004&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=6"
+            "https://github-profile-trophy.vercel.app/?username=nilotpaldhar2004&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=6"
+            "https://github-profile-trophy-liard-delta.vercel.app/?username=nilotpaldhar2004&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=6"
+          )
 
-          # Check if the file is a valid SVG (not an error HTML page)
-          if grep -q "<svg" assets/trophies.svg; then
-            echo "✅ Trophies SVG saved successfully."
-          else
-            echo "⚠️ Trophy service returned an error — keeping previous version if it exists."
-            # Don't overwrite with a broken file; delete the bad response
-            rm assets/trophies.svg
+          for URL in "${TROPHY_URLS[@]}"; do
+            echo "Trying: $URL"
+            curl -s --max-time 15 \
+              -H "User-Agent: Mozilla/5.0 (compatible; GitHubActions)" \
+              "$URL" -o assets/trophies.svg
+
+            if grep -q "<svg" assets/trophies.svg; then
+              echo "✅ Trophies SVG saved from: $URL"
+              break
+            else
+              echo "⚠️ Failed — trying next URL..."
+              rm -f assets/trophies.svg
+            fi
+          done
+
+          if [ ! -f assets/trophies.svg ]; then
+            echo "❌ All trophy URLs failed. Trophies not updated."
           fi
 
       # ── Step 7: Commit all generated SVGs back to the repo ─────
@@ -75,6 +95,5 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add assets/
-          # Only commits if something actually changed — no empty commits
           git diff --staged --quiet || git commit -m "chore: update stats SVGs [skip ci]"
           git push

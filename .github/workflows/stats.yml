@@ -24,13 +24,13 @@ jobs:
         run: mkdir -p assets
 
       # ── Step 3: Generate GitHub Stats card ─────────────────────
-      # include_all_commits=true counts ALL commits across all years
-      # show_total_stars=true counts stars others give YOUR repos
+      # show_total_stars=true  → shows stars others gave YOUR repos
+      # include_all_commits=true → counts commits across ALL years not just this year
       - name: Generate Stats Card
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
-          options: "username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&show=reviews,discussions_started,prs_merged"
+          options: "username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&show_total_stars=true"
           path: assets/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 

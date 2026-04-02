@@ -167,9 +167,6 @@ Detects: **missing values · duplicates · class imbalance · data leakage · hi
 <img src="./assets/langs.svg" width="42%" alt="Top Languages" />
 
 </div>
-
-> ⚠️ **Note on star & PR counts:** GitHub stats cards only count **stars received on your own public repos** and **PRs you opened** on public repos. Low numbers here are normal for a student early in their career — they grow as your repos get discovered. Focus on building quality projects and the stars follow.
-
 ---
 
 ## 📈 Contribution Graph
@@ -186,21 +183,6 @@ Detects: **missing values · duplicates · class imbalance · data leakage · hi
 <img src="./assets/trophies.svg" width="100%" alt="GitHub Trophies"
   onerror="this.onerror=null;this.src='https://github-profile-trophy.vercel.app/?username=nilotpaldhar2004&theme=tokyonight&no-frame=true&no-bg=true&margin-w=6&column=6'" />
 </div>
-
----
-
-## 🎯 Roadmap — What I'm Building Next
-
-> Targeting **20–25 LPA** Data Scientist / ML Engineer roles. Here's what I'm actively working on to get there.
-
-| Priority | Goal | Why it matters for 20–25 LPA |
-|:--------:|:-----|:-----------------------------|
-| 🔴 HIGH | Add **Transformer / LLM fine-tuning** project (e.g. LoRA fine-tune LLaMA on domain data) | Every top DS role in 2026 expects LLM experience |
-| 🔴 HIGH | Add **MLflow / DVC experiment tracking** to existing projects | Shows ML engineering maturity, not just model training |
-| 🟡 MED | Add **Docker + CI/CD** to at least one project | Demonstrates production engineering beyond Render free tier |
-| 🟡 MED | Publish a **Kaggle competition top-10%** finish and write a notebook | Kaggle Expert + high rank = strong signal for quant/DS teams |
-| 🟢 LOW | Add **data pipeline project** using Airflow or Prefect | Data engineering overlap is highly valued at top firms |
-| 🟢 LOW | Contribute to a **major OSS ML repo** (scikit-learn, HuggingFace, etc.) | OSS contributions to known repos are resume gold |
 
 ---
 

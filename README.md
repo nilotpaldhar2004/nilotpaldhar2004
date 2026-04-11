@@ -29,7 +29,7 @@
 ```python
 nilotpal = {
     "name"        : "Nilotpal Dhar",
-    "role"        : ["Data Scientist", "ML Engineer", "Open Source Developer"],
+    "role"        : ["Deep learning", "Machine learning Engineer", "Open Source Developer"],
     "education"   : "B.Tech CSBS — Academy of Technology, West Bengal (2023–2027)",
     "current"     : "6th Semester  ← still in college, already in production",
     "kaggle"      : "Expert 🏆  — competition medals & high-ranking finishes",

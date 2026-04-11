@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Nilotpal%20Dhar&fontSize=52&fontColor=fff&animation=twinkling&fontAlignY=36&desc=Data%20Scientist%20%7C%20ML%20Engineer%20%7C%20Kaggle%20Expert&descAlignY=58&descSize=18" width="100%" />
 
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=2563EB&center=true&vCenter=true&random=false&width=650&lines=Data+Scientist+%26+ML+Engineer;Kaggle+Expert+%F0%9F%8F%86+%7C+PyPI+Author;5+Live+Production+ML+Systems;ResNet-50+%7C+LightGBM+%7C+XGBoost+%7C+FastAPI;Open+to+Full-Time+%26+Freelance+Roles" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=2563EB&center=true&vCenter=true&random=false&width=650&lines=Deep+learning+%26+Machine+learning+Engineer;Kaggle+Expert+%F0%9F%8F%86+%7C+PyPI+Author;5+Live+Production+ML+Systems;ResNet-50+%7C+LightGBM+%7C+XGBoost+%7C+FastAPI;Open+to+Full-Time+%26+Freelance+Roles" alt="Typing SVG" />
 </a>
 
 <br/><br/>

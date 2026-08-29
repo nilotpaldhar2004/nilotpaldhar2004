@@ -168,13 +168,12 @@ Detects: **missing values · duplicates · class imbalance · data leakage · hi
 </div>
 
 
-## 📈 Contribution Graph
+<!-- ## 📈 Contribution Graph -->
 
-<div align="center">
+<!-- <div align="center">
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=nilotpaldhar2004&theme=tokyo-night&hide_border=true&area=true&custom_title=GitHub+Contribution+Activity" width="98%" />
-</div>
+</div> -->
 
----
 
 ## 🏆 GitHub Trophies
 

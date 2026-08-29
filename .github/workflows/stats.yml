@@ -32,7 +32,7 @@ jobs:
           card: stats
           options: "username=nilotpaldhar2004&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&include_all_commits=true&show_total_stars=true"
           path: assets/stats.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_STATS_TOKEN }}
 
       # ── Step 4: Generate Top Languages card ────────────────────
       - name: Generate Top Languages Card
@@ -41,7 +41,7 @@ jobs:
           card: top-langs
           options: "username=nilotpaldhar2004&theme=tokyonight&hide_border=true&layout=compact&langs_count=8"
           path: assets/langs.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_STATS_TOKEN }}
 
       # ── Step 5: Generate Streak Stats via curl ─────────────────
       - name: Generate Streak Stats

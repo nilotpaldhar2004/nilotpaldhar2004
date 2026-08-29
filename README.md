@@ -42,13 +42,13 @@ nilotpal = {
 }
 ```
 
-I'm a **Data Scientist and ML Engineer** in my 6th semester of Computer Science & Business Systems — and I've already shipped more production ML systems than most graduates.
+I'm a **Deep learning and ML Engineer** currently in my final year student of Computer Science
 
 I hold **Kaggle Expert** status earned through competition medals and real-world dataset finishes. I've built and deployed **5 live ML applications** covering fraud detection, medical imaging, rent prediction, churn analysis, and NLP recommendation — every single one has a live URL and a FastAPI backend on Render, not just a notebook.
 
 I'm also the author of **[DataDiagnose](https://pypi.org/project/datadiagnose/)** — a Python library published on PyPI with zero external dependencies. It auto-diagnoses ML datasets, scores dataset health from 0–100, and recommends the right model type before training begins. Built from scratch using only the Python standard library. 140-test suite. MIT licensed.
 
-> **My standard:** Does it solve a real problem? Does it work reliably in production? If yes — ship it.
+> **My standard:** Does it solve a real problem? Does it actually work? If yes, I ship it
 
 ---
 

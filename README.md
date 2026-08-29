@@ -153,18 +153,13 @@ Detects: **missing values · duplicates · class imbalance · data leakage · hi
 ---
 
 ## 📊 GitHub Stats
-
 <div align="center">
-
 <!--
   SVGs are generated daily by .github/workflows/stats.yml
   and committed to assets/ — no external server dependency.
 -->
-<img src="./assets/stats.svg" width="49%" alt="GitHub Stats" />
 <img src="./assets/streak.svg" width="49%" alt="Streak Stats" />
-<br/>
 <img src="./assets/langs.svg" width="42%" alt="Top Languages" />
-
 </div>
 
 

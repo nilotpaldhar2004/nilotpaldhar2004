@@ -38,7 +38,7 @@ nilotpal = {
     "stack"       : ["Python", "PyTorch", "Scikit-Learn", "FastAPI", "SQL"],
     "live_apps"   : "5 deployed ML projects  — each with a public URL & live backend",
     "available"   : True,
-    "looking_for" : ["Full-Time Data Scientist / ML Engineer", "Freelance AI Consulting"],
+    "looking_for" : ["Deep Learning & ML Engineer", "Freelance AI Consulting"],
     "contact"     : "dharnilotpal31@gmail.com",
 }
 ```

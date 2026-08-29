@@ -210,7 +210,7 @@ Detects: **missing values · duplicates · class imbalance · data leakage · hi
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%" />
 
 <sub>
-  <b>Seeking full-time Data Scientist / ML Engineer roles and freelance AI consulting opportunities.</b><br/>
+  <b>Seeking full-time Deep Learning & ML Engineer roles and freelance AI consulting opportunities.</b><br/>
   From raw data to a deployed, working solution — I'm ready.
 </sub>
 
